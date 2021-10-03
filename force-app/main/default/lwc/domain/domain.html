@@ -1,0 +1,41 @@
+<template>
+    
+    <lightning-card><!-- LWC data table Card -->
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom--medium">
+                <h1 class="strong-text slds-text-heading_small">
+ <!-- Icon on card tittle --><lightning-icon icon-name="standard:channel_programs"></lightning-icon>
+  <!-- LWC Card Name --><strong class="slds-m-left--x-small">Manage Existing Domains</strong></h1>
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-p-horizontal--medium slds-m-bottom--medium">
+                <!-- NEW Button for add New Domain-->
+                <lightning-button variant="brand" label="New" title="New" onclick={handleClick} class="slds-m-left_x-small slds-float_right"></lightning-button>
+            </div>
+        </div>
+        <template if:true={domains.data}>
+             <!-- Create Data Table-->
+            <lightning-datatable  
+                key-field="Id"
+                data={domains.data}
+                columns={columns}
+                show-row-number-column
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction} 
+            >
+           </lightning-datatable>
+        </template>
+        <template if:true={errors}> <!-- Error msg handller template-->
+            <p>{errors}</p>
+        </template>
+    </lightning-card>
+    <template if:true={isFormVisible}> <!--It is For Child card  Form visible Condition For template-->
+        <lightning-card icon-name="standard:channel_programs" title="Add New Domain"><!--Tittle card for Insert Card-->
+            <lightning-record-form 
+                object-api-name={objectApiName}
+                fields={fields}
+                onsuccess={handleSuccess}
+                columns="3">
+            </lightning-record-form>
+        </lightning-card>
+    </template>
+</template>

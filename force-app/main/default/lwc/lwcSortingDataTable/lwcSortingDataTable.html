@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Contact Records" icon-name="standard:contact" > <br/>
+       <!--Search Option--> 
+       <div class="slds-m-around_medium"> 
+            <lightning-input type = "search" value={searchKey} onchange={handleKeywordChange}>
+            </lightning-input>
+        </div>
+        <div style="width: auto;">
+            <template if:true={data}>
+                <lightning-datatable data={data}
+                                     columns={columns}
+                                     key-field="id"
+                                     sorted-by={sortBy}
+                                     sorted-direction={sortDirection}
+                                     onsort={handleSortContactData}  
+                                     hide-checkbox-column="true"
+                                     hide-row-number-column="true"
+                                     >
+                                    </lightning-datatable>
+                                    
+            </template>
+        </br>
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    Page {page} of {totalPage}
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                        onclick={nextHandler}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+ 
+        </div>
+
+</lightning-card> 
+</template>
+ 
