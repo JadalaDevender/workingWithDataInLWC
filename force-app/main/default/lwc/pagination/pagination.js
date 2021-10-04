@@ -2,7 +2,7 @@ import { LightningElement, wire, api, track} from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getOpps from '@salesforce/apex/OpportunityController.getOpps';
 import Id from '@salesforce/user/Id';
-import UserRoleId from '@salesforce/schema/User.UserRoleId';
+//import UserRoleId from '@salesforce/schema/User.UserRoleId'; 
 const columns = [{
         label: 'Name',
         fieldName: 'Name',

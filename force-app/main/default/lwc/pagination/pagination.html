@@ -15,7 +15,7 @@
                 </lightning-layout-item>
             </lightning-layout>
         </br>
-            <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search"
+            <lightning-input type="search" onchange={handleKeyChange}  class="slds-m-bottom_small" label="Search"
                 value={searchKey}></lightning-input>
             <lightning-datatable key-field="Id" data={data} columns={columns} sorted-by={sortedBy}
                 sorted-direction={sortedDirection} onsort={sortColumns} hide-checkbox-column="true" show-row-number-column>
