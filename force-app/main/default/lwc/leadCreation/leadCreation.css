@@ -1,0 +1,36 @@
+ 
+h1{
+    background-color: #F3F2F2;
+    font-weight: bold;
+    margin-left: -24px;
+ 
+}
+h2{
+    background-color: #F3F2F2;
+    font-weight: bold;
+    margin-left: -185px;
+ 
+}
+ 
+.slds-modal__container{
+    max-width: 70rem !important;
+    width:80% !important;
+}
+.modal-body.scrollable.slds-modal__content.slds-p-around--medium{
+    max-height:700px;
+}
+.test{
+    margin-top: -25px;
+ 
+}
+.slds-input:required{
+   max-width: 200px !important;
+}
+.slds-form-element{
+    width: 200px !important;
+}
+.standards{
+    padding-left: 160px;
+ 
+}
+ 

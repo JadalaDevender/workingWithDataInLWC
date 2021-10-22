@@ -1,0 +1,106 @@
+<template>
+ 
+    <header class="slds-modal__header">
+        Convert Lead
+      </header>
+      
+    <div class="slds-m-top_medium"
+            style="text-align: center">
+                <lightning-button
+                class="buttonClass"
+                type="submit"
+                name="save"
+                label="Convert"
+                onclick={convertL}
+                ></lightning-button>
+                &nbsp; &nbsp;
+                <lightning-button
+                
+                type="submit"
+                name="save"
+                label="Cancel"
+                onclick={closepopup} 
+            ></lightning-button>
+            </div>
+    <div class="standards">    
+ 
+            <lightning-messages></lightning-messages>
+    
+    <br/>
+                <h2>Convert Lead</h2>
+            <br/>
+            <div class="slds-grid">
+            <div class="slds-col" >
+            <span><lightning-input type="text" label="Record Owner" value={owner} readonly></lightning-input>
+            </span>
+            </div>
+            <div class="slds-col">
+            <span><lightning-input type="Checkbox" label="Send Email To Owner" onchange={checkSendEmail}></lightning-input>
+            </span></div>
+        
+    </div>
+    <div class="slds-grid">
+ 
+           <div class="slds-col slds-size_1-of-2 ">
+           <span>
+        
+                <lightning-combobox
+                name="CreateOption"
+                label="Create Option"
+                
+                placeholder="Select One"
+                options={createOptions}
+                onchange={handleChange}
+                ></lightning-combobox>
+           
+            </span> </div>
+            <template if:true={showAttachTo}>  <div class="slds-col slds-size_1-of-2 test">
+                
+                <span><c-lwc-Custom-Lookup objectname="Account" fieldname="Name" selectrecordid={selectRecordId}
+                       selectrecordname={selectrecordname} iconname = "action:new_account" onselected={selectedrecords}></c-lwc-Custom-Lookup>
+                     </span>
+    </div></template>
+    </div>
+    <div class="slds-grid">
+    
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-combobox
+            name="status"
+            label="Converted Status"
+            value={value}
+            placeholder="Qualified"
+            options={optionsStatus}
+            ></lightning-combobox>
+            </div>
+        <div class="slds-col slds-size_1-of-2">
+        <lightning-input name='opportunityName' type="text" label="Opportunity Name" onchange={checkinput} value={oppName}></lightning-input>
+        </div>
+    </div>
+    <br/>
+    <div class="slds-grid">
+    <div class="slds-col slds-size_1-of-2">
+    <lightning-input name='noOpp' type="Checkbox" label="Do not create new opportunity upon conversion" onchange={checkSendEmail}></lightning-input>
+        </div>
+    </div>
+    </div>
+    <br/>
+    <div class="slds-m-top_medium"
+    style="text-align: center">
+    <lightning-button
+        type="submit"
+        name="save"
+        label="Convert"
+        onclick={convertL}
+    ></lightning-button>
+        &nbsp; &nbsp;
+    <lightning-button
+       class="buttonClass"
+       type="submit"
+       name="save"
+       label="Cancel"
+       onclick={closepopup} 
+    ></lightning-button>
+     <br/>
+     <br/>
+    </div>
+    </template>

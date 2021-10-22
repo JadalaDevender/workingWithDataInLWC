@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Lightning Datatable Example">
+        <div class="slds-m-around_medium">
+            <lightning-datatable key-field="Id" data={data} columns={columns} sorted-by={sortedBy}
+                sorted-direction={sortedDirection} onsort={sortColumns} hide-checkbox-column="true" show-row-number-column>
+            </lightning-datatable>    
+        </div>
+    </lightning-card>
+</template>
